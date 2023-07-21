@@ -1,0 +1,1189 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/kaf.jpg">
+  <link rel="icon" href="/img/kaf.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Kaf">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="面向过程编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE（一）-面向过程编程">
+<meta property="og:url" content="http://kafspace.github.io/2023/03/01/JavaSE%EF%BC%88%E4%B8%80%EF%BC%89-%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="kaf blog">
+<meta property="og:description" content="面向过程编程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://kafspace.github.io/img/images/I6nCh49qzyvoZBm.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/kT46yi8KNOLWlp3.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230713224445219.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714002735680.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714003411170.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/CpI5jaWgR9nqTbc.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714161440632.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714161339889.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/Z7AiBPNO6ylML4z.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714161916691.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714162221789.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714162342998.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714162605303.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714165020791.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714165050944.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714165350940.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714165415953.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714165447373.png">
+<meta property="og:image" content="http://kafspace.github.io/img/images/image-20230714165532619.png">
+<meta property="article:published_time" content="2023-03-01T08:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-21T16:47:07.042Z">
+<meta property="article:author" content="Kaf">
+<meta property="article:tag" content="JavaSE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://kafspace.github.io/img/images/I6nCh49qzyvoZBm.png">
+  
+  
+  
+  <title>JavaSE（一）-面向过程编程 - kaf blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"kafspace.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>kaf</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JavaSE（一）-面向过程编程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-01 16:00" pubdate>
+          2023/03/01 16:00 
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          21k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          176分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JavaSE（一）-面向过程编程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="面向过程编程"><a href="#面向过程编程" class="headerlink" title="面向过程编程"></a>面向过程编程</h1><span id="more"></span>
+
+<h2 id="Java程序基础"><a href="#Java程序基础" class="headerlink" title="Java程序基础"></a>Java程序基础</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
+<li>使用双斜杠<code>//</code>（单行注释）</li>
+<li>多行可以使用<code>/*</code>和<code>*/</code>的组合来囊括需要编写的注释内容</li>
+<li>使用<code>/**</code>来进行更加详细的文档注释</li>
+</ul>
+<h3 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><blockquote>
+<p>变量，指值可以变的量。变量以非<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%97/6204?fromModule=lemma_inlink">数字</a>的符号来表达，一般用拉丁字母。变量的用处在于能一般化描述指令的方式。结果只能使用真实的值，指令只能应用于某些情况下。变量能够作为某特定种类的值中任何一个的保留器。</p>
+</blockquote>
+<p>在Java中，我们也可以让变量去代表一个具体的值，并且变量的值是可以发生变化的。</p>
+<p>要声明一个变量，需要使用以下格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">[数据类型] [变量名称];<br></code></pre></td></tr></table></figure>
+
+<p>变量要求：</p>
+<ul>
+<li><p>标识符可以由大小写字母、数字、下划线(_)和美元符号($)组成，但是不能以数字开头。</p>
+</li>
+<li><p>变量不能重复定义，大小写敏感，比如A和a就是两个不同的变量。</p>
+</li>
+<li><p>不能有空格、@、#、+、-、&#x2F; 等符号。</p>
+</li>
+<li><p>应该使用有意义的名称，达到见名知意的目的（一般我们采用英文单词），最好以小写字母开头。</p>
+</li>
+<li><p>不可以是 true 和 false。</p>
+</li>
+<li><p>不能与Java语言的关键字或是基本数据类型重名，关键字列表如下：</p>
+<p><img src="/../img/images/I6nCh49qzyvoZBm.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>有时候希望变量的值一直保持不变，可以将其指定为常量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">666</span>;   <span class="hljs-comment">//在变量前面添加final关键字，表示这是一个常量</span><br>    a = <span class="hljs-number">777</span>;    <span class="hljs-comment">//常量的值不允许发生修改</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>编译时出现：</p>
+<p><img src="/../img/images/kT46yi8KNOLWlp3.png" srcset="/img/loading.gif" lazyload></p>
+<p>常量的值只有第一次赋值可以修改，其他任何情况下都不行：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> a;<br>    a = <span class="hljs-number">777</span>;   <span class="hljs-comment">//第一次赋值</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="计算机中的二进制表示"><a href="#计算机中的二进制表示" class="headerlink" title="计算机中的二进制表示"></a>计算机中的二进制表示</h3><p>在计算机中，所有的内容都是二进制形式表示。十进制是以10为进位，如9+1&#x3D;10；二进制则是满2进位（因为我们的计算机是电子的，电平信号只有高位和低位，你也可以暂且理解为通电和不通电，高电平代表1，低电平代表0，由于只有0和1，因此只能使用2进制表示我们的数字！）比如1+1&#x3D;10&#x3D;2^1+0，一个位也叫一个bit，8个bit称为1字节，16个bit称为一个字，32个bit称为一个双字，64个bit称为一个四字，我们一般采用字节来描述数据大小。</p>
+<p>这里的bit跟生活中的网速MB&#x2F;s是不一样的，小b代表的是bit，大B代表的是Byte字节（8bit &#x3D; 1Byte字节），办理宽带的时候，100Mbps这里的b是小写的，所以说实际的网速就是100&#x2F;8 &#x3D; 12.5 MB&#x2F;s了。</p>
+<blockquote>
+<p>十进制的7 -&gt; 在二进制中为 111 &#x3D; 2^2 + 2^1 + 2^0</p>
+</blockquote>
+<p>现在有4个bit位，最大能够表示多大的数字呢？</p>
+<ul>
+<li>最小：0000 &#x3D;&gt; 0</li>
+<li>最大：1111 &#x3D;&gt; 23+22+21+20 &#x3D;&gt; 8 + 4 + 2 + 1 &#x3D; 15</li>
+</ul>
+<p>在Java中，无论是小数还是整数，他们都要带有符号（和C语言不同，C语言有无符号数）所以，首位就作为符号位，还是以4个bit为例，首位现在作为符号位（1代表负数，0代表正数）：</p>
+<ul>
+<li>最小：1111 &#x3D;&gt; -(22+21+2^0) &#x3D;&gt; -7</li>
+<li>最大：0111 &#x3D;&gt; +(22+21+2^0) &#x3D;&gt; +7 &#x3D;&gt; 7</li>
+</ul>
+<p>现在，4bit能够表示的范围变为了-7~+7，这样的表示方式称为<strong>原码</strong>。虽然原码表示简单，但是原码在做加减法的时候，很麻烦！以4bit位为例：</p>
+<blockquote>
+<p>1+(-1) &#x3D; 0001 + 1001 &#x3D; 怎么让计算机去计算？</p>
+</blockquote>
+<p>得创造一种更好的表示方式！于是引入了<strong>反码</strong>：</p>
+<ul>
+<li>正数的反码是其本身</li>
+<li>负数的反码是在其原码的基础上, 符号位不变，其余各个位取反</li>
+</ul>
+<p>经过上面的定义，再来进行加减法：</p>
+<blockquote>
+<p>1+(-1) &#x3D; 0001 + 1110 &#x3D; 1111 &#x3D;&gt; -0 </p>
+</blockquote>
+<p>思考：1111代表-0，0000代表+0，在实数的范围内，0有正负之分吗？0既不是正数也不是负数，那么显然这样的表示依然不够合理！根据上面的问题，我们引入了最终的解决方案，那就是<strong>补码</strong>，定义如下：</p>
+<ul>
+<li>正数的补码就是其本身 （不变！）</li>
+<li>负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1（即在反码的基础上+1，此时1000表示-8）</li>
+<li>对补码再求一次补码就可得该补码对应的原码。</li>
+</ul>
+<p>比如-7原码为1111，反码为1000，补码就是1001了，-6原码为1110，反码为1001，补码就是1010。所以在补码下，原本的1000就作为新增的最小值-8存在。</p>
+<p>所以现在就已经能够想通，-0已经被消除了！再来看上面的运算：</p>
+<blockquote>
+<p>1+(-1) &#x3D; 0001 + 1111 &#x3D; (1)0000 &#x3D;&gt; +0 </p>
+</blockquote>
+<p>所以现在，1111代表的不再是-0，而是-1，相应的，由于消除-0，负数多出来一个可以表示的数（1000拿去表示-8了），那么此时4bit位能够表示的范围是：-8~+7（Java使用的就是补码）</p>
+<h3 id="整型类型"><a href="#整型类型" class="headerlink" title="整型类型"></a>整型类型</h3><p>在Java中，整数类型包括以下几个：</p>
+<ul>
+<li>byte 字节型 （8个bit，也就是1个字节）范围：-128~+127</li>
+<li>short 短整形（16个bit，也就是2个字节）范围：-32768~+32767</li>
+<li>int 整形（32个bit，也就是4个字节）最常用的类型：-2147483648 ~ +2147483647</li>
+<li>long 长整形（64个bit，也就是8个字节）范围：-9223372036854775808 ~ +9223372036854775807</li>
+</ul>
+<h4 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h4><p>这几种变量都可以正常表示整数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">short</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    System.out.println(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>因为都可以表示整数，所以可以将小的整数类型值传递给大的整数类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">short</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a;   <span class="hljs-comment">//小的类型可以直接传递给表示范围更大的类型</span><br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>反之会出现报错：</p>
+<p><img src="/../img/images/image-20230713224445219.png" srcset="/img/loading.gif" lazyload></p>
+<p>在将小的整数类型传递给大的整数类型时发生了<strong>隐式类型转换</strong>，只要是从存储范围小的类型到存储范围大的类型，都支持隐式类型转换，它可以自动将某种类型的值，转换为另一种类型，比如上面就是将short类型的值转换为了int类型的值。</p>
+<p>为变量赋一个常量数值时，也发生了隐式类型转换，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>   <span class="hljs-type">byte</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;    <span class="hljs-comment">//这里的整数常量10，实际上默认情况下是int类型，但是由于正好在对应类型可以表示的范围内，所以说直接转换为了byte类型的值</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>由于直接编写的整数常量值默认为<code>int</code>，这里需要特别注意一下，比如下面这种情况：</p>
+<p><img src="/../img/images/image-20230714002735680.png" srcset="/img/loading.gif" lazyload></p>
+<p>按照<code>long</code>类型的规定，实际上是可以表示这么大的数字的，我们直接在代码中写的常量数字，默认情况下就是<code>int</code>类型，这么大肯定是表示不下的，如果需要将其表示为一个long类型的常量数字，需要在后面添加大写或是小写的<code>L</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">long</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">922337203685477580L</span>;   <span class="hljs-comment">//正常编译通过</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>针对于这种很长的数字，为了提升辨识度，可以使用下划线分割每一位：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>   <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">1_000_000</span>;    <span class="hljs-comment">//当然这里依然表示的是1000000，没什么区别，但是辨识度会更高</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>也可以以8进制或是16进制表示一个常量值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    System.out.println(<span class="hljs-number">0xA</span>);<br>    System.out.println(<span class="hljs-number">012</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="超出数值最大值"><a href="#超出数值最大值" class="headerlink" title="超出数值最大值"></a>超出数值最大值</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">2147483647</span>;   <span class="hljs-comment">//int最大值</span><br>    a = a + <span class="hljs-number">1</span>;   <span class="hljs-comment">//继续加</span><br>    System.out.println(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>此时a的值已经来到了<code>int</code>类型所能表示的最大值了，那么如果此时再继续<code>+1</code>，</p>
+<p><img src="/../img/images/image-20230714003411170.png" srcset="/img/loading.gif" lazyload></p>
+<p>当int为最大值时，二进制表示形式为什么：</p>
+<ul>
+<li>2147483647 &#x3D; 01111111 11111111 11111111 11111111（第一个是符号位0，其他的全部为1，就是正数的最大值）</li>
+</ul>
+<p>那么此时如果加1，会进位成：</p>
+<ul>
+<li>10000000 00000000 00000000 00000000</li>
+</ul>
+<p>符号位为1，那么此时表示的不就是一个负数了吗？根据补码表示规则，瞬间就能明白了，这不就是补码形式下的最小值了吗？</p>
+<p>所以说最后的结果就是<code>int</code>类型的最小值：-2147483648。</p>
+<h3 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h3><p>Java中的小数类型包含哪些：</p>
+<ul>
+<li>float 单精度浮点型 （32bit，4字节）</li>
+<li>double 双精度浮点型（64bit，8字节）</li>
+</ul>
+<p><img src="/../img/images/CpI5jaWgR9nqTbc.png" srcset="/img/loading.gif" lazyload></p>
+<p>根据国际标准 IEEE 754，任意一个二进制浮点数 V 可以表示成下面的形式：<br>$$<br>V&#x3D;(−1)<br>S<br> ×M×2<br>E<br>$$</p>
+<ul>
+<li>(−1)�(−1)<em>S</em> 表示符号位，当 S&#x3D;0，V 为正数；当 S&#x3D;1，V 为负数。</li>
+<li>M 表示有效数字，大于等于 1，小于 2，但整数部分的 1 不变，因此可以省略。（例如尾数为1111010，那么M实际上就是1.111010，尾数首位必须是1，1后面紧跟小数点，如果出现0001111这样的情况，去掉前面的0，移动1到首位；题外话：随着时间的发展，IEEE 754标准默认第一位为1，故为了能够存放更多数据，就舍去了第一位，比如保存1.0101 的时候， 只保存 0101，这样能够多存储一位数据）</li>
+<li>2�2<em>E</em> 表示指数位。（用于移动小数点，所以说才称为浮点型）</li>
+</ul>
+<p>比如， 对于十进制的 5.25 对应的二进制为：101.01，相当于：1.0101×221.0101×22。所以，S 为 0，M 为 1.0101，E 为 2。因此，对于浮点类型，最大值和最小值不仅取决于符号和尾数，还有它的阶码，所以浮点类型的大致取值范围：</p>
+<ul>
+<li>单精度：±3.40282347×1038±3.40282347×1038</li>
+<li>双精度：±1.79769313486231570×10308±1.79769313486231570×10308</li>
+</ul>
+<p>跟整数类型常量一样，小数类型常量默认都是<code>double</code>类型，所以说如果我们直接给一个float类型赋值：</p>
+<p><img src="/../img/images/image-20230714161440632.png" srcset="/img/loading.gif" lazyload></p>
+<p>由于<code>float</code>类型的精度不如<code>double</code>，如果直接给其赋一个double类型的值，会直接出现错误。</p>
+<p>同样的，可以给常量后面添加大写或小写的F来表示这是一个<code>float</code>类型的常量值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">float</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> <span class="hljs-number">9.9F</span>;   <span class="hljs-comment">//这样就可以正常编译通过了</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>但是反之，由于<code>double</code>精度更大，所以说可以直接接收<code>float</code>类型的值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">float</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> <span class="hljs-number">9.9F</span>;<br>    <span class="hljs-type">double</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> f;    <span class="hljs-comment">//隐式类型转换为double值</span><br>    System.out.println(a);<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>只不过由于精度问题，最后的打印结果：</p>
+<p><img src="/../img/images/image-20230714161339889.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">long</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">21731371236768L</span>;<br>    <span class="hljs-type">float</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> l;   <span class="hljs-comment">//这里能编译通过吗？</span><br>    System.out.println(f);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>long</code>类型的值居然可以直接丢给<code>float</code>类型隐式类型转换，很明显<code>float</code>只有32个bit位，而<code>long</code>有足足64个，这是什么情况？怎么大的还可以隐式转换为小的？这是因为虽然<code>float</code>空间没有那么大，但是由于是浮点类型，指数可以变化，最大的数值表示范围实际上是大于<code>long</code>类型的，虽然会丢失精度，但是确实可以表示这么大的数。</p>
+<blockquote>
+<p>总结一下隐式类型转换规则：byte→short(char)→int→long→float→double</p>
+</blockquote>
+<h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><p>字符类型也是一个重要的基本数据类型，它可以表示计算机中的任意一个字符（包括中文、英文、标点等一切可以显示出来的字符）</p>
+<ul>
+<li>char 字符型（16个bit，也就是2字节，它不带符号）范围是0 ~ 65535</li>
+</ul>
+<p>可以看到char类型依然存储的是数字，那么它是如何表示每一个字符的呢？实际上每个数字在计算机中都会对应一个字符，首先我们需要介绍ASCII码：</p>
+<p><img src="/../img/images/Z7AiBPNO6ylML4z.png" srcset="/img/loading.gif" lazyload></p>
+<p>比如我们的英文字母<code>A</code>要展示出来，那就是一个字符的形式，而其对应的ASCII码值为65，所以说当char为65时，打印出来的结果就是大写的字母A了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">65</span>;<br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../img/images/image-20230714161916691.png" srcset="/img/loading.gif" lazyload></p>
+<p>这里的字符表里面不就128个字符吗，那<code>char</code>干嘛要两个字节的空间来存放呢？我们发现表中的字符远远没有我们所需要的那么多，这里只包含了一些基础的字符，中文呢？那么多中文字符（差不多有6000多个），用ASCII编码表那128个肯定是没办法全部表示的，但是我们现在需要在电脑中使用中文。这时，我们就需要扩展字符集了。</p>
+<blockquote>
+<p>我们可以使用两个甚至多个字节来表示一个中文字符，这样我们能够表示的数量就大大增加了，GB2132方案规定当连续出现两个大于127的字节时（注意不考虑符号位，此时相当于是第一个bit位一直为1了），表示这是一个中文字符（所以为什么常常有人说一个英文字符占一字节，一个中文字符占两个字节），这样我们就可以表示出超过7000种字符了，不仅仅是中文，甚至中文标点、数学符号等，都可以被正确的表示出来。</p>
+<p>不过这样能够表示的内容还是不太够，除了那些常见的汉字之外，还有很多的生僻字，比如龘、錕、釿、拷这类的汉字，后来干脆直接只要第一个字节大于127，就表示这是一个汉字的开始，无论下一个字节是什么内容（甚至原来的128个字符也被编到新的表中），这就是Windows至今一直在使用的默认GBK编码格式。</p>
+<p>虽然这种编码方式能够很好的解决中文无法表示的问题，但是由于全球还有很多很多的国家以及很多很多种语言，所以我们的最终目标是能够创造一种可以表示全球所有字符的编码方式，整个世界都使用同一种编码格式，这样就可以同时表示全球的语言了。所以这时就出现了一个叫做ISO的（国际标准化组织）组织，来定义一套编码方案来解决所有国家的编码问题，这个新的编码方案就叫做Unicode（准确的说应该是规定的字符集，包含了几乎全世界所有语言的字符），规定每个字符必须使用两个字节，即用16个bit位来表示所有的字符（也就是说原来的那128个字符也要强行用两位来表示）</p>
+<p>但是这样的话实际上是很浪费资源的，因为这样很多字符都不会用到两字节来保存，肯定不能直接就这样去表示，这会导致某些字符浪费了很多空间，我们需要一个更加好用的具体的字符编码方式。所以最后就有了UTF-8编码格式（它是Unicode字符集的一个编码规则），区分每个字符的开始是根据字符的高位字节来区分的，比如用一个字节表示的字符，第一个字节高位以“0”开头；用两个字节表示的字符，第一个字节的高位为以“110”开头，后面一个字节以“10开头”；用三个字节表示的字符，第一个字节以“1110”开头，后面俩字节以“10”开头；用四个字节表示的字符，第一个字节以“11110”开头，后面的三个字节以“10”开头：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">10000011</span> <span class="hljs-number">10000110</span>    <span class="hljs-comment">//这就是一个连续出现都大于127的字节（注意这里是不考虑符号位的）</span><br></code></pre></td></tr></table></figure>
+
+<p>所以如果我们的程序需要表示多种语言，最好采用UTF-8编码格式，随着更多的字符加入，实际上两个字节也装不下了，可能需要3个甚至4个字节才能表示某些符号，后来就有了UTF-16编码格式，Java在运行时采用的就是UTF-16，几乎全世界的语言用到的字符都可以表示出来。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Unicode符号范围（十六进制）</th>
+<th>UTF-8编码方式(二进制)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0000 0000 ~ 0000 007F</td>
+<td>0xxxxxxx</td>
+</tr>
+<tr>
+<td>0000 0080 ~ 0000 07FF</td>
+<td>110xxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0000 0800 ~ 0000 FFFF</td>
+<td>1110xxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0001 0000 ~ 0010 FFFF</td>
+<td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong>Unicode 是“字符集”，也就是有哪些字符，而UTF-8、UTF-16 是“编码规则”，也就是怎么对这些字符编码，怎么以二进制的形式保存，千万不要搞混了。</p>
+<p>简而言之，char实际上需要两个字节才能表示更多种类的字符，所以，<code>char</code>类型可以直接表示一个中文字符：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;淦&#x27;</span>;   <span class="hljs-comment">//使用int类型接收字符类型常量值可以直接转换为对应的编码</span><br>    System.out.println(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../img/images/image-20230714162221789.png" srcset="/img/loading.gif" lazyload></p>
+<p>Java程序在编译为<code>.class</code>文件之后，会采用UTF-8的编码格式，支持的字符也非常多，可以直接把变量名写成中文，依然可以编译通过：</p>
+<p><img src="/../img/images/image-20230714162342998.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>布尔类型是Java中的一个比较特殊的类型，它并不是存放数字的，而是状态，它有下面的两个状态：</p>
+<ul>
+<li>true - 真</li>
+<li>false - 假</li>
+</ul>
+<p>布尔类型（boolean）只有<code>true</code>和<code>false</code>两种值，也就是要么为真，要么为假，布尔类型的变量通常用作流程控制判断语句（不同于C语言，C语言中一般使用0表示false，除0以外的所有数都表示true）布尔类型占据的空间大小并未明确定义，而是根据不同的JVM会有不同的实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">boolean</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;   <span class="hljs-comment">//值只能是true或false</span><br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>给一个其他的值，无法编译通过：</p>
+<p><img src="/../img/images/image-20230714162605303.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p>赋值运算符可以直接给某个变量赋值：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">666</span>;   <span class="hljs-comment">//使用等号进行赋值运算</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>使用规则为：</strong>赋值运算符的左边必须是一个可以赋值的目标，比如变量，右边可以是任意满足要求的值，包括变量。</p>
+<p>当然，赋值运算符并不只是单纯的赋值，它是有结果的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> a;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a = <span class="hljs-number">777</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>当出现连续使用赋值运算符时，按照从右往左的顺序进行计算，首先是<code>a = 777</code>，计算完成后，a的值就变成了777，计算完成后，会得到计算结果（赋值运算的计算结果就是赋的值本身，就像1 + 1的结果是2一样，a &#x3D; 1的结果就是1）此时继续进行赋值计算，那么b就被赋值为<code>a = 777</code>的计算结果，同样的也是 777 了。</p>
+<p>所以，使用连等可以将一连串变量都赋值为最右边的值。</p>
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span> + <span class="hljs-number">1</span>;<br>    System.out.println(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到a赋值为1+1的结果，所以说最后a就是2了。</p>
+<p>当然变量也是可以参与到算术运算中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a - <span class="hljs-number">10</span>;<br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>不同类型之间也可以进行运算：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;<br>    <span class="hljs-type">short</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a + b;   <br>      <span class="hljs-comment">//不同类型的整数一起运算，小类型需要转换为大类型，short、byte、char一律转换为int再进行计算（无论算式中有无int，都需要转换），结果也是int；如果算式中出现了long类型，那么全部都需要转换到long类型再进行计算，结果也是long，反正就是依大的来</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>因为运算时会发生隐式类型转换，所以说这里b自动转换为了int类型进行计算，所以说最后得到结果也一定是转换后的类型：</p>
+<p><img src="/../img/images/image-20230714165020791.png" srcset="/img/loading.gif" lazyload></p>
+<p>因为小数表示范围更广，所以说整数会被转换为小数再进行计算，而最后的结果也肯定是小数了。</p>
+<p><img src="/../img/images/image-20230714165050944.png" srcset="/img/loading.gif" lazyload></p>
+<p>也可以将加减号作为正负符号使用，让a变成自己的相反数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    a = -a;   <span class="hljs-comment">//减号此时作为负号运算符在使用，会将右边紧跟的目标变成相反数</span><br>    System.out.println(a);   <span class="hljs-comment">//这里就会得到-10了</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="加法字符串拼接"><a href="#加法字符串拼接" class="headerlink" title="加法字符串拼接"></a>加法字符串拼接</h4><p>注意加法支持对字符串的拼接：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;伞兵&quot;</span> + <span class="hljs-string">&quot;lbw&quot;</span>;   <span class="hljs-comment">//可以使用加号来拼接两个字符串</span><br>    System.out.println(str);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>最后这个字符串就变成了拼接后的结果了：</p>
+<p><img src="/../img/images/image-20230714165350940.png" srcset="/img/loading.gif" lazyload></p>
+<p>字符串不仅可以跟字符串拼接，也可以跟基本数据类型拼接：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;伞兵&quot;</span> + <span class="hljs-literal">true</span> + <span class="hljs-number">1.5</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    System.out.println(str);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>最后就可以得到对应的结果了：</p>
+<p><img src="/../img/images/image-20230714165415953.png" srcset="/img/loading.gif" lazyload></p>
+<p>当然，除了加减法之外乘除法也是支持的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>, b = <span class="hljs-number">2</span>;<br>    System.out.println(a * b);   <span class="hljs-comment">//乘法使用*表示乘号</span><br>      System.out.println(a / b);   <span class="hljs-comment">//除法就是一个/表示除号</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意，两个整数在进行除法运算时，得到的结果也是整数（会直接砍掉小数部分，注意不是四舍五入）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>, b = <span class="hljs-number">5</span>;<br>    System.out.println(a / b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面是两个int类型的值进行的除法运算，正常情况下8除以5应该得到1.6，但是由于结果也是整数，所以说最后小数部分被丢弃：</p>
+<p><img src="/../img/images/image-20230714165447373.png" srcset="/img/loading.gif" lazyload></p>
+<p>但是如果是两个小数一起计算的话，因为结果也是小数，所以说就可以准确得到结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">double</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8.0</span>, b = <span class="hljs-number">5.0</span>;<br>    System.out.println(a / b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../img/images/image-20230714165532619.png" srcset="/img/loading.gif" lazyload></p>
+<p>同样的，整数和小数一起计算，由于所有的整数范围都比小数小，根据我们上一部分介绍的转换规则，整数和小数一起计算时，所有的整数都会变成小数参与运算，所以说最后的结果也就是小数了，同样可以得到正确的结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">double</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8.0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;<br>    System.out.println(a / b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="整数计算出小数"><a href="#整数计算出小数" class="headerlink" title="整数计算出小数"></a>整数计算出小数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>, b = <span class="hljs-number">5</span>;<br>    <span class="hljs-type">double</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a;   <span class="hljs-comment">//我们可以将其先隐式转换为小数类型，再那转换后的小数变量去参与计算</span><br>    System.out.println(c / b);   <span class="hljs-comment">//同样可以得到正确结果</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在下一节，我们将介绍强制类型转换，通过使用强制类型转换，我们可以更轻松地让整数计算出小数的结果。</p>
+<p>除了最基本的加减乘除操作，可以进行取模操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    System.out.println(a % <span class="hljs-number">3</span>);   <span class="hljs-comment">//比如这里对a进行取模操作，实际上就是计算除以3的余数</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>比如上面的是 10 % 3 得到的结果就是10除以3最后的余数1，取模操作也是非常好用的。</p>
+<p>比如我们查看某个数是否为双数，只需要将其对2进行取模操作即可，因为如果是双数一定是可以整除的，如果是单数一定会余1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    System.out.println(<span class="hljs-number">17</span> % <span class="hljs-number">2</span>);   <span class="hljs-comment">//17不是双数，所以说最后会得到1</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意，运算符之间是有优先级之分的，比如乘除法优先级高于加减法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    System.out.println(<span class="hljs-number">10</span> + <span class="hljs-number">3</span> * <span class="hljs-number">4</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a = <span class="hljs-number">8</span> * -a + <span class="hljs-number">10</span>;<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">        1. 正负号优先级最高，所有首先计算的是-a，得到-10</span><br><span class="hljs-comment">        2. 其次是乘除号优先级更高，所以说这里计算 8 * -10，得到 -80</span><br><span class="hljs-comment">        3. 然后是加减法，-80 + 10 = -70</span><br><span class="hljs-comment">        4. 最后是赋值运算，因为等号运算符从右往左结合，先算a = -70的结果就是 -70</span><br><span class="hljs-comment">        5. 最后b就是 -70</span><br><span class="hljs-comment">     */</span><br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="括号运算符"><a href="#括号运算符" class="headerlink" title="括号运算符"></a>括号运算符</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> (a = <span class="hljs-number">8</span>) * (-a + <span class="hljs-number">10</span>);<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">        1. 括号的优先级是最高的，我们需要先计算括号中的内容，如果存在多个括号，就从左往右计算</span><br><span class="hljs-comment">        2. 首先是 a = 8，计算完成之后a变成8，并且运算结果也为8</span><br><span class="hljs-comment">        3. 然后是后面的加法，-a就是-8，加上10就是2</span><br><span class="hljs-comment">        4. 最后才是乘法，左边此时是8，右边是2，最后结果为16</span><br><span class="hljs-comment">     */</span><br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在嵌套的情况下，会优先计算最内层括号中的算式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> (<span class="hljs-number">2</span> + (<span class="hljs-number">3</span> + <span class="hljs-number">1</span>) * <span class="hljs-number">3</span>) * <span class="hljs-number">2</span>;<br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h3><p>想要对一个变量进行这样的自增操作时，可以：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    a = a + <span class="hljs-number">1</span>;    <span class="hljs-comment">//让a等于a本身+1，相当于自增了1</span><br>    System.out.println(a);   <span class="hljs-comment">//得到9</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>也可以使用自增自减运算符：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    a++;   <span class="hljs-comment">//自增运算符就是两个加号连在一起，效果跟上面是一样的，a都会自增1</span><br>      a--;  <br>    System.out.println(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>自增自减运算符可以放到操作数的前后：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    ++a;   <span class="hljs-comment">//自增运算符在前在后最终效果都是让a自增1，是一样的</span><br>    System.out.println(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>自增自减操作同样是有结果的，注意，这两种方式自增操作的结果不一样，我们来看下面的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a++;   <span class="hljs-comment">//先出结果，再自增</span><br>    System.out.println(b);  <span class="hljs-comment">//b得到的是a自增前的值</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> ++a;   <span class="hljs-comment">//先自增，再出结果</span><br>    System.out.println(b);   <span class="hljs-comment">//b得到的是a自增之后的结果</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>自增自减运算符的优先级与正负号等价比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> -a++ + ++a; <br>      <span class="hljs-comment">//我们首先来看前面的a，因为正负号和自增是同一个优先级，结合性是从右往左，所以说先计算a++</span><br>      <span class="hljs-comment">//a++的结果还是8，然后是负号，得到-8</span><br>      <span class="hljs-comment">//接着是后面的a，因为此时a已经经过前面变成9了，所以说++a就是先自增，再得到10</span><br>      <span class="hljs-comment">//最后得到的结果为 -8 + 10 = 2</span><br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>以其他数进行自增：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    a += <span class="hljs-number">4</span>;   <span class="hljs-comment">//加号和等号连在一起，与a = a + 4效果完全一样</span><br>    System.out.println(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>全部算术运算符都是支持这种缩写的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span>;<br>    a *= <span class="hljs-number">9</span>;   <span class="hljs-comment">//跟 a = a * 9 等价</span><br>    System.out.println(a);   <span class="hljs-comment">//得到72</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>位运算符包括：&amp; | ^ ~</p>
+<h4 id="按位与"><a href="#按位与" class="headerlink" title="按位与"></a>按位与</h4><p>按位与&amp;，比如下面的两个数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">9</span>, b = <span class="hljs-number">3</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a &amp; b;    <span class="hljs-comment">//进行按位与运算</span><br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>按位与实际上就是让这两个数每一位都进行比较，如果这一位两个数都是1，那么结果就是1，否则就是0：</p>
+<ul>
+<li>a &#x3D; 9 &#x3D; 1001</li>
+<li>b &#x3D; 3 &#x3D; 0011</li>
+<li>c &#x3D; 1 &#x3D; 0001（因为只有最后一位，两个数都是1，所以说结果最后一位是1，其他都是0）</li>
+</ul>
+<h4 id="按位或"><a href="#按位或" class="headerlink" title="按位或"></a>按位或</h4><p>同样的，按位或，其实就是只要任意一个为1（不能同时为0）那么结果就是1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">9</span>, b = <span class="hljs-number">3</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a | b;<br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>a &#x3D; 9 &#x3D; 1001</li>
+<li>b &#x3D; 3 &#x3D; 0011</li>
+<li>c &#x3D;11&#x3D; 1011（只要上下有一个是1或者都是1，那结果就是1）</li>
+</ul>
+<h4 id="按位异或"><a href="#按位异或" class="headerlink" title="按位异或"></a>按位异或</h4><p>按位异或符号很多小伙伴会以为是乘方运算，但是Java中并没有乘方运算符，<code>^</code>是按位异或运算符，不要记错了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">9</span>, b = <span class="hljs-number">3</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a ^ b;<br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>异或的意思就是只有两边不相同的情况下，结果才是1，也就是说一边是1一边是0的情况：</p>
+<ul>
+<li>a &#x3D; 9 &#x3D; 1001</li>
+<li>b &#x3D; 3 &#x3D; 0011</li>
+<li>c &#x3D;10&#x3D; 1010（从左往右第二位、第四位要么两个都是0，要么两个都是1，所以说结果为0）</li>
+</ul>
+<h4 id="按位取反"><a href="#按位取反" class="headerlink" title="按位取反"></a>按位取反</h4><p>按位取反操作跟前面的正负号一样，只操作一个数，最好理解，如果这一位上是1，变成0，如果是0，变成1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">byte</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> ~<span class="hljs-number">127</span>;<br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>127 &#x3D; 01111111</li>
+<li>-128 &#x3D; 10000000</li>
+</ul>
+<p>所以说计算的结果就是-128了。</p>
+<h4 id="位移运算符"><a href="#位移运算符" class="headerlink" title="位移运算符"></a>位移运算符</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">byte</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">2</span>;    <span class="hljs-comment">//两个连续的小于符号，表示左移运算</span><br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>1 &#x3D; 00000001</li>
+<li>4 &#x3D; 00000100（左移两位之后，1跑到前面去了，尾部使用<strong>0</strong>填充，此时就是4）</li>
+</ul>
+<p>我们发现，左移操作每进行一次，结果就会x2，所以说，除了直接使用<code>*</code>进行乘2的运算之外，我们也可以使用左移操作来完成。</p>
+<p>同样的，右移操作就是向右移动每一位咯：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">byte</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">8</span> &gt;&gt; <span class="hljs-number">2</span>;<br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>8 &#x3D; 00001000</li>
+<li>2 &#x3D; 00000010（右移两位之后，1跑到后面去了，头部使用<strong>符号位数字</strong>填充，此时变成2）</li>
+</ul>
+<p>跟上面一样，右移操作可以快速进行除以2的计算。</p>
+<p>对于负数来说，左移和右移操作不会改变其符号位上的数字，符号位不受位移操作影响：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">byte</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> -<span class="hljs-number">4</span> &gt;&gt; <span class="hljs-number">1</span>;<br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>-4 &#x3D; 11111100</li>
+<li>-2 &#x3D; 11111110（前面这一长串1都被推到后面一位了，因为是负数，头部需要使用<strong>符号位数字</strong>来进行填充）</li>
+</ul>
+<p>来总结一下：</p>
+<ul>
+<li><strong>左移操作&lt;&lt;：</strong>高位直接丢弃，低位补0</li>
+<li><strong>右移操作&gt;&gt;：</strong>低位直接丢弃，符号位是什么高位补什么</li>
+</ul>
+<p>也可以使用考虑符号位的右移操作，一旦考虑符号位，那么符号会被移动：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span> &gt;&gt; <span class="hljs-number">1</span>;   <span class="hljs-comment">//正常的右移操作，高位补1，所以说移了还是-1</span><br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span> &gt;&gt;&gt; <span class="hljs-number">1</span>;   <span class="hljs-comment">//无符号右移是三个大于符号连在一起，移动会直接考虑符号位</span><br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>比如：</p>
+<ul>
+<li>-1 &#x3D; 11111111 11111111 11111111 11111111</li>
+<li>右移： 01111111 11111111 11111111 11111111（无符号右移使用0填充高位）</li>
+</ul>
+<p>此时得到的结果就是正数的最大值 2147483647 了，注意，不存在无符号左移。</p>
+<p>位移操作也可以缩写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>    c = c &lt;&lt; <span class="hljs-number">2</span>;<br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以缩写为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>    c &lt;&lt;= <span class="hljs-number">2</span>;    <span class="hljs-comment">//直接运算符连上等号即可，跟上面是一样的</span><br>    System.out.println(c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><p>判断两个变量谁更大，我们可以使用关系运算符：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>, b = <span class="hljs-number">20</span>;<br>    <span class="hljs-type">boolean</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a &gt; b;   <span class="hljs-comment">//进行判断，如果a &gt; b那么就会得到true，否则会得到false</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>关系判断的结果只可能是真或是假，所以说得到的结果是一个<code>boolean</code>类型的值。</p>
+<p>关系判断运算符包括：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">&gt;   大于<br>&lt;   小于<br><span class="hljs-section">==  等于（注意是两个等号连在一起，不是一个等号，使用时不要搞混了）</span><br>!=  不等于<br>&gt;=  大于等于<br>&lt;=  小于等于<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>逻辑运算符包括：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">&amp;&amp;     与运算，要求两边同时为<span class="hljs-literal">true</span>才能返回<span class="hljs-literal">true</span><br>||     或运算，要求两边至少要有一个为<span class="hljs-literal">true</span>才能返回<span class="hljs-literal">true</span><br>!      非运算，一般放在表达式最前面，表达式用括号扩起来，表示对表达式的结果进行反转<br></code></pre></td></tr></table></figure>
+
+<p>三元运算符可以根据判断条件，返回不同的结果，比如我们想要判断：</p>
+<ul>
+<li>当a &gt; 10时，给b赋值’A’</li>
+<li>当a &lt;&#x3D; 10时，给b赋值’B’</li>
+</ul>
+<p>我们就可以使用三元运算符来完成：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    <span class="hljs-type">char</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a &gt; <span class="hljs-number">10</span> ? <span class="hljs-string">&#x27;A&#x27;</span> : <span class="hljs-string">&#x27;B&#x27;</span>;   <span class="hljs-comment">//三元运算符需要三个内容，第一个是判断语句，第二个是满足判断语句的值，第三个是不满足判断语句的值</span><br>    System.out.println(b);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>三元运算符：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">判断语句 ? 结果<span class="hljs-number">1</span> : 结果2<br></code></pre></td></tr></table></figure>
+
+<p>因此，上面的判断为假，所以说返回的是结果2，那么最后b得到的就是<code>B</code>这个字符了。</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>结合性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>( )</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>2</td>
+<td>~ - + (强制类型转换) ++ –</td>
+<td>从右向左</td>
+</tr>
+<tr>
+<td>3</td>
+<td>* &#x2F; %</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>4</td>
+<td>+ -</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&gt; &lt; &gt;&#x3D; &gt;&#x3D;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&#x3D;&#x3D; !&#x3D;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&amp;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>9</td>
+<td>^</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>10</td>
+<td>|</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&amp;&amp;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>12</td>
+<td>||</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>13</td>
+<td>? :</td>
+<td>从右向左</td>
+</tr>
+<tr>
+<td>14</td>
+<td>&#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; %&#x3D; &amp;&#x3D; |&#x3D; ^&#x3D; &lt;&lt;&#x3D; &gt;&gt;&#x3D; &gt;&gt;&gt;&#x3D;</td>
+<td>从右向左</td>
+</tr>
+</tbody></table>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h3><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><p>某些时候，希望进行判断，只有在条件为真时，才执行某些代码</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">if (条件判断) 判断成功执行的代码<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">15</span>;<br>    <span class="hljs-keyword">if</span>(a == <span class="hljs-number">15</span>)    <span class="hljs-comment">//只有当a判断等于15时，才会执行下面的打印语句</span><br>          System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>      System.out.println(<span class="hljs-string">&quot;我是外层&quot;</span>);   <span class="hljs-comment">//if只会对紧跟着的一行代码生效，后续的内容无效</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>if</code>会进行判断，只有判断成功时才会执行紧跟着的语句，否则会直接跳过，注意，如果我们想要在if中执行多行代码，需要使用代码块将这些代码囊括起来（实际上代码块就是将多条语句复合到一起）所以说，我们以后使用if时，如果分支中有多行代码需要执行，就需要添加花括号，如果只有一行代码，花括号可以直接省略，包括我们后面会讲到的else、while、for语句都是这样的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">15</span>;<br>    <span class="hljs-keyword">if</span>(a &gt; <span class="hljs-number">10</span>) &#123;    <span class="hljs-comment">//只有判断成功时，才会执行下面的代码块中内容，否则直接跳过</span><br>        System.out.println(<span class="hljs-string">&quot;a大于10&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;a的值为：&quot;</span>+a);<br>    &#125;<br>      System.out.println(<span class="hljs-string">&quot;我是外层&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>if-else</code>语句就像两个分支，跟据不同的判断情况从而决定下一步该做什么，这跟我们之前认识的三元运算符性质比较类似。</p>
+<p>那如果此时我们需要判断多个分支呢？比如我们现在希望判断学生的成绩，不同分数段打印的等级不一样，比如90以上就是优秀，70以上就是良好，60以上是及格，其他的都是不及格，那么这种我们又该如何判断呢？要像这样进行连续判断，我们需要使用<code>else-if</code>来完成：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span>  <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">if</span>(score &gt;= <span class="hljs-number">90</span>)    <span class="hljs-comment">//90分以上才是优秀</span><br>        System.out.println(<span class="hljs-string">&quot;优秀&quot;</span>);<br>     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">70</span>)    <span class="hljs-comment">//当上一级if判断失败时，会继续判断这一级</span><br>        System.out.println(<span class="hljs-string">&quot;良好&quot;</span>);<br>     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (score &gt;= <span class="hljs-number">60</span>)<br>        System.out.println(<span class="hljs-string">&quot;及格&quot;</span>);<br>     <span class="hljs-keyword">else</span>    <span class="hljs-comment">//当之前所有的if都判断失败时，才会进入到最后的else语句中</span><br>        System.out.println(<span class="hljs-string">&quot;不及格&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>当然，<code>if</code>分支语句还支持嵌套使用，比如我们现在希望低于60分的同学需要补习，0-30分需要补Java，30-60分需要补C++，这时我们就需要用到嵌套：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span>  <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">if</span>(score &lt; <span class="hljs-number">60</span>) &#123;   <span class="hljs-comment">//先判断不及格</span><br>        <span class="hljs-keyword">if</span>(score &gt; <span class="hljs-number">30</span>)    <span class="hljs-comment">//在内层再嵌套一个if语句进行进一步的判断</span><br>            System.out.println(<span class="hljs-string">&quot;学习C++&quot;</span>);<br>        <span class="hljs-keyword">else</span><br>            System.out.println(<span class="hljs-string">&quot;学习Java&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4><p>也可以使用<code>switch</code>语句来实现，它更适用于多分支的情况：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">switch</span> (目标) &#123;   <span class="hljs-comment">//我们需要传入一个目标，比如变量，或是计算表达式等</span><br>  <span class="hljs-keyword">case</span> 匹配值:    <span class="hljs-comment">//如果目标的值等于我们这里给定的匹配值，那么就执行case后面的代码</span><br>    代码...<br>    <span class="hljs-keyword">break</span>;    <span class="hljs-comment">//代码执行结束后需要使用break来结束，否则会溜到下一个case继续执行代码</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>要根据学生的等级进行分班，学生有ABC三个等级：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <span class="hljs-keyword">switch</span> (c) &#123;  <span class="hljs-comment">//这里目标就是变量c</span><br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;A&#x27;</span>:    <span class="hljs-comment">//分别指定ABC三个匹配值，并且执行不同的代码</span><br>            System.out.println(<span class="hljs-string">&quot;去尖子班！准备冲刺985大学！&quot;</span>);<br>            <span class="hljs-keyword">break</span>;   <span class="hljs-comment">//执行完之后一定记得break，否则会继续向下执行下一个case中的代码</span><br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;B&#x27;</span>:<br>            System.out.println(<span class="hljs-string">&quot;去平行班！准备冲刺一本！&quot;</span>);<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;C&#x27;</span>:<br>            System.out.println(<span class="hljs-string">&quot;去职高深造。&quot;</span>);<br>            <span class="hljs-keyword">break</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>switch</code>可以精准匹配某个值，但是它不能进行范围判断，比如要判断分数段，这时用switch就很鸡肋了。</p>
+<p>当然除了精准匹配之外，其他的情况我们可以用default来表示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">switch</span> (目标) &#123;<br>    <span class="hljs-keyword">case</span>: ...<br>    <span class="hljs-keyword">default</span>:<br>            其他情况下执行的代码<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>还是以刚才那个例子为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <span class="hljs-keyword">switch</span> (c) &#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;A&#x27;</span>:<br>            System.out.println(<span class="hljs-string">&quot;去尖子班！&quot;</span>);<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;B&#x27;</span>:<br>            System.out.println(<span class="hljs-string">&quot;去平行班！&quot;</span>);<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;C&#x27;</span>:<br>            System.out.println(<span class="hljs-string">&quot;去差生班！&quot;</span>);<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">default</span>:   <span class="hljs-comment">//其他情况一律就是下面的代码了</span><br>            System.out.println(<span class="hljs-string">&quot;去读职高，分流&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>当然switch中可以继续嵌套其他的流程控制语句，比如if：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <span class="hljs-keyword">switch</span> (c) &#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;A&#x27;</span>:<br>            <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;A&#x27;</span>) &#123;    <span class="hljs-comment">//嵌套一个if语句</span><br>                System.out.println(<span class="hljs-string">&quot;去尖子班！&quot;</span>);<br>            &#125;<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;B&#x27;</span>:<br>            System.out.println(<span class="hljs-string">&quot;去平行班！&quot;</span>);<br>            <span class="hljs-keyword">break</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><p>在某些时候，可能需要批量执行某些代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;伞兵一号卢本伟准备就绪！&quot;</span>);   <span class="hljs-comment">//把这句话给我打印三遍</span><br>    System.out.println(<span class="hljs-string">&quot;伞兵一号卢本伟准备就绪！&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;伞兵一号卢本伟准备就绪！&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><p>可以使用for循环语句来多次执行：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (表达式<span class="hljs-number">1</span>;表达式<span class="hljs-number">2</span>;表达式<span class="hljs-number">3</span>) 循环体;<br></code></pre></td></tr></table></figure>
+
+<p>介绍一下详细规则：</p>
+<ul>
+<li>表达式1：在循环开始时仅执行一次。</li>
+<li>表达式2：每次循环开始前会执行一次，要求为判断语句，用于判断是否可以结束循环，若结果为真，那么继续循环，否则结束循环。</li>
+<li>表达式3：每次循环完成后会执行一次。</li>
+<li>循环体：每次循环都会执行一次循环体。</li>
+</ul>
+<p>一个标准的for循环语句写法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>      <span class="hljs-comment">//比如我们希望让刚刚的打印执行3次</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)    <span class="hljs-comment">//这里我们在for语句中定义一个变量i，然后每一轮i都会自增，直到变成3为止</span><br>        System.out.println(<span class="hljs-string">&quot;伞兵一号卢本伟准备就绪！&quot;</span>);   <span class="hljs-comment">//这样，就会执行三轮循环，每轮循环都会执行紧跟着的这一句打印</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>也可以在循环过程中提前终止或是加速循环的进行，需要认识两个新的关键字：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) &#123;<br>        <span class="hljs-keyword">if</span>(i == <span class="hljs-number">1</span>) <span class="hljs-keyword">continue</span>;   <span class="hljs-comment">//比如我们希望当i等于1时跳过这一轮，不执行后面的打印</span><br>        System.out.println(<span class="hljs-string">&quot;伞兵一号卢本伟准备就绪！&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;当前i的值为：&quot;</span>+i);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以使用<code>continue</code>关键字来跳过本轮循环，直接开启下一轮。这里的跳过是指，循环体中，无论后面有没有未执行的代码，一律不执行，比如上面的判断如果成功，那么将执行<code>continue</code>进行跳过，虽然后面还有打印语句，但是不会再去执行了，而是直接结束当前循环，开启下一轮。</p>
+<p>在某些情况下，可能希望提前结束循环：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) &#123;<br>    <span class="hljs-keyword">if</span>(i == <span class="hljs-number">1</span>) <span class="hljs-keyword">break</span>;   <span class="hljs-comment">//我们希望当i等于1时提前结束</span><br>    System.out.println(<span class="hljs-string">&quot;伞兵一号卢本伟准备就绪！&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;当前i的值为：&quot;</span>+i);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以使用<code>break</code>关键字来提前终止整个循环，和上面一样，本轮循环中无论后续还有没有未执行的代码，都不会执行了，而是直接结束整个循环，跳出到循环外部。</p>
+<p>虽然使用break和continue关键字能够更方便的控制循环，但是注意在多重循环嵌套下，它只对离它最近的循环生效（就近原则）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">4</span>; ++i) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; <span class="hljs-number">4</span>; ++j) &#123;<br>        <span class="hljs-keyword">if</span>(i == j) <span class="hljs-keyword">continue</span>;    <span class="hljs-comment">//当i == j时加速循环</span><br>        System.out.println(i+<span class="hljs-string">&quot;, &quot;</span>+j);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这里的<code>continue</code>加速的对象并不是外层的for，而是离它最近的内层for循环，<code>break</code>也是同样的规则：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">4</span>; ++i) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; <span class="hljs-number">4</span>; ++j) &#123;<br>        <span class="hljs-keyword">if</span>(i == j) <span class="hljs-keyword">break</span>;    <span class="hljs-comment">//当i == j时终止循环</span><br>        System.out.println(i+<span class="hljs-string">&quot;, &quot;</span>+j);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>那么，要是我们就是想要终止或者是加速外层循环呢？我们可以为循环语句打上标记：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">outer: <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">4</span>; ++i) &#123;   <span class="hljs-comment">//在循环语句前，添加 标签: 来进行标记</span><br>    inner: <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; <span class="hljs-number">4</span>; ++j) &#123;<br>        <span class="hljs-keyword">if</span>(i == j) <span class="hljs-keyword">break</span> outer;    <span class="hljs-comment">//break后紧跟要结束的循环标记，当i == j时终止外层循环</span><br>        System.out.println(i+<span class="hljs-string">&quot;, &quot;</span>+j);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>如果一个代码块中存在多个循环，那么直接对当前代码块的标记执行<code>break</code>时会直接跳出整个代码块：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">outer: &#123;    <span class="hljs-comment">//直接对整个代码块打标签</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) &#123;<br>        <span class="hljs-keyword">if</span> (i == <span class="hljs-number">7</span>)&#123;<br>            System.out.println(<span class="hljs-string">&quot;Test&quot;</span>);<br>            <span class="hljs-keyword">break</span> outer;   <span class="hljs-comment">//执行break时，会直接跳出整个代码块，而不是第一个循环</span><br>        &#125;<br>    &#125;<br><br>    System.out.println(<span class="hljs-string">&quot;？？？&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span>(循环条件) 循环体;<br></code></pre></td></tr></table></figure>
+
+<p>相比for循环，while循环更多的用在不明确具体的结束时机的情况下，而for循环更多用于明确知道循环的情况，比如我们现在明确要进行循环10次，此时用for循环会更加合适一些，又比如我们现在只知道当<code>i</code>大于10时需要结束循环，但是<code>i</code>在循环多少次之后才不满足循环条件我们并不知道，此时使用while就比较合适了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;   <span class="hljs-comment">//比如现在我们想看看i不断除以2得到的结果会是什么，但是循环次数我们并不明确</span><br>    <span class="hljs-keyword">while</span> (i &gt; <span class="hljs-number">0</span>) &#123;   <span class="hljs-comment">//现在唯一知道的是循环条件，只要大于0那么就可以继续除</span><br>        System.out.println(i);<br>        i /= <span class="hljs-number">2</span>;   <span class="hljs-comment">//每次循环都除以2</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面的这种情况就非常适合使用while循环。</p>
+<p>和for循环一样，while也支持使用break和continue来进行循环的控制，以及嵌套使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;<br>    <span class="hljs-keyword">while</span> (i &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">if</span>(i &lt; <span class="hljs-number">10</span>) <span class="hljs-keyword">break</span>;<br>        System.out.println(i);<br>        i /= <span class="hljs-number">2</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们也可以反转循环判断的时机，可以先执行循环内容，然后再做循环条件判断，这里要用到<code>do-while</code>语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;   <span class="hljs-comment">//比如现在我们想看看i不断除以2得到的结果会是什么，但是循环次数我们并不明确</span><br>    <span class="hljs-keyword">do</span> &#123;  <span class="hljs-comment">//无论满不满足循环条件，先执行循环体里面的内容</span><br>        System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>        i++;<br>    &#125; <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>);   <span class="hljs-comment">//再做判断，如果判断成功，开启下一轮循环，否则结束</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaSE/" class="category-chain-item">JavaSE</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JavaSE/">#JavaSE</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/02/JavaSE%EF%BC%88%E4%BA%8C%EF%BC%89-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" title="JavaSE（二）-面向对象编程基础">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaSE（二）-面向对象编程基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/15/HTML5/" title="HTML5">
+                        <span class="hidden-mobile">HTML5</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <span>kaf</span></a> <i class="iconfont icon-love"></i> <span>cat</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
